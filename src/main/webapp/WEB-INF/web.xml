@@ -28,11 +28,11 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		
-		<!-- 첨부파일 설정 -->
-				<multipart-config>
-			<location>C:\\upload\\temp</location>
-			<max-file-size>20971520</max-file-size> <!--1MB * 20 -->
-			<max-request-size>41943040</max-request-size><!-- 40MB -->
+<!-- 첨부파일 설정========================================================================= -->
+		<multipart-config>
+			<location>C:\\upload\\temp</location><!-- 파일이 저장 될 공간 -->
+			<max-file-size>20971520</max-file-size> <!--1MB * 20 --><!-- 업로드 되는 파일의 최대크기 -->
+			<max-request-size>41943040</max-request-size><!-- 40MB --><!-- 한번에 올릴 수 있는 최대크기 -->
 			<file-size-threshold>20971520</file-size-threshold> <!-- 20MB -->
 		</multipart-config>
 	</servlet>

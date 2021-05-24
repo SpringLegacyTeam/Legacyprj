@@ -45,7 +45,7 @@
 
 	<tx:annotation-driven />
 
-<!-- 	<mybatis-spring:scan
+	<mybatis-spring:scan
 		base-package="org.yoon.mapper" />
 
 	<context:component-scan
@@ -54,7 +54,7 @@
 		base-package="org.yoon.aop"></context:component-scan>
 		
 	<context:component-scan
-    base-package="org.yoon.task"></context:component-scan> -->
+    base-package="org.yoon.task"></context:component-scan> 
 		
 
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
