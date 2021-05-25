@@ -23,7 +23,7 @@ reply varchar2(1000) not null,
 replyer varchar2(50) not null,
 replyDate date default sysdate,
 updatedate date default sysdate
-);
+); 
 
 create sequence seq_reply
 increment by 1
