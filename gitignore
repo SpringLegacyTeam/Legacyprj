@@ -16,7 +16,7 @@ target/
 .idea
 classes/
 META-INF/
-  
+pom.properties  
 # OS Files #
 .DS_Store
   
