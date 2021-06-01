@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+  <mapper namespace="org.yoon.mapper.GBoardMapper">
+  	
+  	<!-- 글등록-->
+	<insert id="insert">
+		insert into G_board (bno, title, content, writer)
+		values (G_board_sequence.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey resultType="Long" order="BEFORE" keyProperty="bno">select G_board_sequence.nextval from dual</selectKey>
+		insert into G_board (bno, title, content, writer)
+		values (#{bno}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 글 상세보기-->
+	<select id="read" resultType="org.yoon.domain.GBoardVO">
+		select * from G_board where bno = #{bno}
+	</select>
+	
+	<!-- 글 삭제하기 -->
+	<delete id="delete" >
+		delete from g_board where bno = #{bno}
+	</delete>
+	
+	<!-- 글 수정하기 -->
+	<update id="update">
+		update g_board
+	set title = #{title},
+	content = #{content},
+	writer = #{writer},
+	updatedate = sysdate
+	where bno = #{bno}
+	</update>
+	
+  </mapper>
